@@ -13,7 +13,7 @@ def load_cook_book(file_path):
         ingridient = recipe_book.readline().split(' | ')
         ingridient_dict = dict()
         ingridient_dict['ingridient_name'] = ingridient[0]
-        ingridient_dict['quantity'] = ingridient[1]
+        ingridient_dict['quantity'] = int(ingridient[1])
         ingridient_dict['measure'] = ingridient[2].strip()
         cook_book[dish_name].append(ingridient_dict)
       recipe_book.readline()

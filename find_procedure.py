@@ -6,15 +6,14 @@ dir_name = 'Migrations'
 
 def find_files_by_text(files_list, text):
     search_result = list()
-    file_match_count = len(search_result)
     for file in files_list:
         if file.endswith(".sql"):
             with open(os.path.join(dir_name, file)) as opened_file:
                 data = opened_file.read()
                 if re.search(text, data, re.IGNORECASE):
                     search_result.append(file)
-                    file_match_count += 1
                     print(file)
+    file_match_count = len(search_result)
     print('Total count:', file_match_count)
     return search_result
 
